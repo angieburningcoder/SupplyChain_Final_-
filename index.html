@@ -139,13 +139,13 @@ svg text{font-family:var(--body)}
 @media(max-width:760px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* timeline */
-.tl{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;padding-top:6px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding-block:8px}
 .tl::before{content:"";position:absolute;left:4%;right:4%;top:18px;height:2px;background:var(--line)}
 .tp{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
 .tp .dot{width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--sage);z-index:1}
 .tp.due .dot{border-color:var(--rose-d);background:var(--rose-d)}
-.tp .d{font-family:var(--mono);font-size:12px;font-weight:500}
-.tp .t{font-size:12px;color:var(--muted);line-height:1.4}
+.tp .d{font-family:var(--mono);font-size:14px;font-weight:500;margin-top:6px}
+.tp .t{font-size:13px;color:var(--muted);line-height:1.5}
 @media(max-width:640px){.tl{grid-template-columns:1fr;gap:10px}.tl::before{left:7px;right:auto;top:8px;bottom:8px;width:2px;height:auto}.tp{flex-direction:row;text-align:left;gap:10px}}
 
 .tl2{overflow-x:auto;padding:12px 0 16px}
@@ -534,31 +534,19 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- TIMELINE -->
   <section>
-    <div class="head"><h2>時程：從今天到 12/22</h2><p class="meta">依組內暫定時程排入艷麗的工作，間距為示意</p></div>
-    <div class="panel tl2">
-      <div class="trk">
-        <div class="nd dash up"><div class="top"><div class="lb"><b>10/20（二）</b><span>討論</span><span>課後討論 Final 方向</span><em class="ok">提案艷麗</em></div></div><span class="dot"></span><div class="bot"></div></div>
-        <div class="nd dash dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>10/27（二）</b><span>討論</span><span>定題＋分工</span><em class="ok">A 聯絡店家約訪</em></div></div></div>
-        <div class="nd dash up"><div class="top"><div class="lb"><b>10/28–11/2</b><span>完成</span><span>Intro 簡報</span><em class="ok">先去店裡消費觀察</em></div></div><span class="dot"></span><div class="bot"></div></div>
-        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>11/3（二）</b><span>上台 Final Intro</span><span>用這頁的故事＋供應鏈地圖</span><em class="other">同時完成 Case Report</em></div></div></div>
-        <div class="nd solid up muted"><div class="top"><div class="lb"><b>11/17（二）</b><span>上台</span><span>20 分鐘 Case Report</span><em>繳件 DDL 11/16 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
-        <div class="nd dash dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>11/18–11/27</b><span>完成</span><span>正式訪談＋現場觀察</span><em class="ok">各自寫分析</em></div></div></div>
-        <div class="nd dash up"><div class="top"><div class="lb"><b>12/4（五）</b><span>完成</span><span>Final Report 簡報</span><em>DDL 12/4 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
-        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>12/15（二）</b><span>上台</span><span>10 分鐘 Final Report</span><em>繳件 DDL 12/14 23:59</em></div></div></div>
-        <div class="nd dash up"><div class="top"><div class="lb"><b>12/20（日）</b><span>完成</span><span>3,000 字 Final Doc</span><em>DDL 12/20 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
-        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>12/22（二）</b><span>繳件</span><span>Final Doc</span><em>繳件 DDL 12/22 23:59</em></div></div></div>
-      </div>
-      <div class="lgd">
-        <span><i class="dot s"></i>上台・繳件（課程規定）</span>
-        <span><i class="dot d"></i>討論・完成（組內節點，可調）</span>
-        <span><em class="ok">綠字</em>＝艷麗專題要做的事</span>
-        <span class="mutedtxt">灰色＝Penang 個案，不屬於本專題</span>
+    <div class="head"><h2>時程</h2><p class="meta">實心＝上台或繳交（課程規定），空心＝組內節點</p></div>
+    <div class="panel">
+      <div class="tl">
+        <div class="tp"><span class="dot"></span><div><div class="d">10/27</div><div class="t">定題・分工<br>聯絡店家</div></div></div>
+        <div class="tp due"><span class="dot"></span><div><div class="d">11/3</div><div class="t">上台<br>Final Intro</div></div></div>
+        <div class="tp"><span class="dot"></span><div><div class="d">11/18–20</div><div class="t">訪談店家</div></div></div>
+        <div class="tp"><span class="dot"></span><div><div class="d">12/4</div><div class="t">完成簡報</div></div></div>
+        <div class="tp due"><span class="dot"></span><div><div class="d">12/15</div><div class="t">上台發表<br>10 分鐘</div></div></div>
+        <div class="tp"><span class="dot"></span><div><div class="d">12/20</div><div class="t">完成報告</div></div></div>
+        <div class="tp due"><span class="dot"></span><div><div class="d">12/22</div><div class="t">繳交報告</div></div></div>
       </div>
     </div>
-    <div class="todo">
-      <div><b>11/3 Intro 前</b>　還沒正式訪談，Intro 先講二手資料＋第一次到店觀察；訪談意願最好 10/27 就問到</div>
-      <div><b>11/18–11/27 是最緊的一段</b>　Case Report 一結束就訪談，只剩一週做 12/4 的簡報，建議訪談約在 11/18–11/20</div>
-    </div>
+    <p class="meta">11/17 前大家在忙 Penang Case Report，所以訪談排在它結束後馬上進行。</p>
   </section>
 
   <!-- TODO -->
