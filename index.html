@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="清大科管所供應鏈管理期末專題提案：新竹艷麗 Pondok Sunny 的多通路與冷鏈供應鏈">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+<title>艷麗 Pondok Sunny 期末提案</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one light, low-saturation column (max 920px); each section leads with a picture, text kept to labels. Single light theme by choice. */
+:root{
+  --bg:#f4f5f2; --surface:#fbfbf9; --ink:#3b423e; --muted:#7b847f; --line:#dde1db;
+  --sage:#8fa898; --sage-d:#5f7a69; --sage-l:#e3ebe5;
+  --rose:#cfa9ae; --rose-d:#a26f77; --rose-l:#f2e6e7;
+  --mustard:#d9c894; --mustard-d:#9c8547; --mustard-l:#f3eedd;
+  --blue:#a7b8c6; --blue-d:#5f7b92; --blue-l:#e6ecf1;
+  --lav:#b9b1cc; --lav-d:#7b6f99; --lav-l:#ece9f2;
+  --peach:#e2b9a0;
+  --display:"Noto Serif TC","Songti TC",serif; --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.7}
+.wrap{max-width:920px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:36px 64px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(24px,4.6vw,34px);line-height:1.35;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.35;margin:0;text-wrap:balance}
+h3{font-size:15px;margin:0}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.1em;color:var(--sage-d);font-weight:700}
+.meta{color:var(--muted);font-size:13.5px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+section{padding-top:48px;display:flex;flex-direction:column;gap:16px}
+.head{display:flex;flex-direction:column;gap:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.scroll{overflow-x:auto}
+svg text{font-family:var(--body)}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:99px;white-space:nowrap}
+.p-sage{background:var(--sage-l);color:var(--sage-d)}.p-rose{background:var(--rose-l);color:var(--rose-d)}.p-mus{background:var(--mustard-l);color:var(--mustard-d)}.p-blue{background:var(--blue-l);color:var(--blue-d)}.p-lav{background:var(--lav-l);color:var(--lav-d)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:center}
+.hero .txt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.q{background:var(--sage-l);border-radius:10px;padding:12px 16px;font-weight:500}
+@media(max-width:640px){.hero{grid-template-columns:1fr}.hero svg{max-width:200px}}
+
+/* requirement checks */
+.checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.chk{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;min-width:0}
+.chk svg{flex:none}
+.chk b{display:block;font-size:14px}
+.chk span{font-size:13px;color:var(--muted)}
+@media(max-width:700px){.checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.checks{grid-template-columns:1fr}}
+
+/* story */
+.story{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.fr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 8px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.fr .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.fr b{font-size:14px}
+.fr span.s{font-size:12px;color:var(--muted);line-height:1.45}
+.fr.alert{border-color:var(--rose);background:var(--rose-l)}
+@media(max-width:760px){.story{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* pain legend */
+.pains{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pain{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;min-width:0}
+.pain .num{flex:none;width:22px;height:22px;border-radius:50%;background:var(--rose-d);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+.pain b{display:block;font-size:14px}
+.pain span{color:var(--muted)}
+@media(max-width:700px){.pains{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* products */
+.prods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.prod{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start;min-width:0}
+.prod svg{align-self:center}
+.prod span.s{font-size:13px;color:var(--muted);line-height:1.5}
+.prod .tags{display:flex;flex-wrap:wrap;gap:4px}
+@media(max-width:760px){.prods{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* demand */
+.dem{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.dm{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.dm b{font-size:14px}
+.dm span{font-size:12.5px;color:var(--muted)}
+.dm svg{width:100%;height:auto}
+@media(max-width:760px){.dem{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* scor strip */
+.scor{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.sc{border-radius:10px;padding:10px;text-align:center;min-width:0}
+.sc b{display:block;font-family:var(--mono);font-size:13px}
+.sc span{font-size:12.5px}
+.sc.who{font-size:11.5px;opacity:.8}
+@media(max-width:560px){.scor{grid-template-columns:1fr 1fr}}
+
+/* options */
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.opt.pick{border:2px solid var(--sage)}
+.opt h3{font-size:15.5px}
+.opt .s{font-size:13px;color:var(--muted)}
+.opt .th{font-size:12.5px;border-top:1px dashed var(--line);padding-top:8px;color:var(--ink)}
+@media(max-width:760px){.opts{grid-template-columns:1fr}}
+
+/* postponement diagram */
+.post{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.post .panel{padding:14px}
+.post h3{margin-bottom:8px}
+@media(max-width:640px){.post{grid-template-columns:1fr}}
+
+/* interview */
+.iv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ivq{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13.5px;min-width:0}
+.ivq .tg{flex:none}
+@media(max-width:700px){.iv{grid-template-columns:1fr}}
+
+/* talk bar */
+.bar{display:flex;border-radius:10px;overflow:hidden;font-size:13px;font-weight:500}
+.bar div{padding:10px 8px;min-width:0;line-height:1.35;color:var(--ink)}
+.bar small{display:block;font-family:var(--mono);opacity:.75}
+@media(max-width:560px){.bar{flex-direction:column}.bar div{flex:none!important}}
+
+/* report blocks */
+.rep{display:flex;flex-direction:column;gap:6px}
+.rrow{display:grid;grid-template-columns:150px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13.5px}
+.rrow .track{height:18px;background:var(--line);border-radius:4px;overflow:hidden}
+.rrow .fill{height:100%;border-radius:4px}
+.rrow .who{font-family:var(--mono);font-weight:500;text-align:center;border-radius:6px;font-size:12px;padding:1px 0}
+@media(max-width:520px){.rrow{grid-template-columns:110px minmax(0,1fr) 34px}}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.role{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.role svg{align-self:center}
+.role ul{margin:0;padding-left:16px;font-size:13px}
+.role .out{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:6px;width:100%}
+@media(max-width:760px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* timeline */
+.tl{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;padding-top:6px}
+.tl::before{content:"";position:absolute;left:4%;right:4%;top:18px;height:2px;background:var(--line)}
+.tp{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.tp .dot{width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--sage);z-index:1}
+.tp.due .dot{border-color:var(--rose-d);background:var(--rose-d)}
+.tp .d{font-family:var(--mono);font-size:12px;font-weight:500}
+.tp .t{font-size:12px;color:var(--muted);line-height:1.4}
+@media(max-width:640px){.tl{grid-template-columns:1fr;gap:10px}.tl::before{left:7px;right:auto;top:8px;bottom:8px;width:2px;height:auto}.tp{flex-direction:row;text-align:left;gap:10px}}
+
+.tl2{overflow-x:auto;padding:12px 0 16px}
+.trk{position:relative;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));min-width:900px;padding:0 56px}
+.trk::before{content:"";position:absolute;left:40px;right:40px;top:113px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--rose-l),var(--lav-l),var(--blue-l),var(--sage-l))}
+.nd{display:flex;flex-direction:column;align-items:center;min-width:0}
+.nd .top,.nd .bot{height:104px;width:100%;display:flex}
+.nd .top{align-items:flex-end;padding-bottom:6px}
+.nd .bot{align-items:flex-start;padding-top:6px}
+.nd .dot{position:relative;z-index:1;width:28px;height:28px;border-radius:50%;background:var(--surface);flex:none}
+.nd.solid .dot{border:4px solid var(--ink)}
+.nd.dash .dot{border:2.5px dashed var(--muted)}
+.lb{width:150px;margin-left:calc(50% - 75px);text-align:center;display:flex;flex-direction:column;font-size:12.5px;line-height:1.45}
+.lb b{font-size:14px;font-family:var(--mono);font-weight:500;margin-bottom:2px}
+.lb span{color:var(--ink)}
+.lb em{font-style:normal;font-size:12px;font-weight:700;color:var(--rose-d)}
+.lb em.ok{color:var(--sage-d)}
+.lb em.other{color:var(--muted)}
+.nd.muted .lb,.nd.muted .lb span,.nd.muted .lb em{color:var(--muted)}
+.nd.muted .dot{border-color:var(--muted)}
+.lgd{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.5px;color:var(--ink);padding:4px 16px 0}
+.lgd span{display:inline-flex;align-items:center;gap:6px}
+.lgd em{font-style:normal;font-weight:700;color:var(--sage-d)}
+.lgd .mutedtxt{color:var(--muted)}
+.lgd .dot{display:inline-block;width:14px;height:14px;border-radius:50%}
+.lgd .dot.s{border:3px solid var(--ink)}
+.lgd .dot.d{border:2px dashed var(--muted)}
+.todo b{display:block;color:var(--ink)}
+.todo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.todo div{background:var(--surface);border:1px dashed var(--muted);border-radius:10px;padding:10px 12px;font-size:13.5px}
+@media(max-width:560px){.todo{grid-template-columns:1fr}}
+.src{margin:0;padding-left:20px;font-size:13.5px}
+a{color:var(--sage-d)}
+footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
+
+/* svg classes */
+.st{stroke:var(--ink);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hd{fill:var(--surface);stroke:var(--ink);stroke-width:2.2}
+.lbl{font-size:13px;fill:var(--ink);font-weight:700}
+.sub{font-size:11.5px;fill:var(--muted)}
+.flow{stroke:var(--muted);stroke-width:2;fill:none;stroke-dasharray:6 5}
+.pm{fill:var(--rose-d)}
+.pmt{fill:#fff;font-size:12px;font-weight:700}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- stick person, origin at feet center, ~60 tall -->
+    <symbol id="man" viewBox="-20 -64 40 66" overflow="visible">
+      <circle class="hd" cx="0" cy="-52" r="9"/>
+      <path class="st" d="M0 -43 V-18 M0 -18 L-9 0 M0 -18 L9 0 M0 -36 L-12 -24 M0 -36 L12 -24"/>
+    </symbol>
+    <symbol id="manW" viewBox="-20 -64 40 66" overflow="visible">
+      <circle class="hd" cx="0" cy="-52" r="9"/>
+      <path class="st" d="M0 -43 V-18 M0 -18 L-9 0 M0 -18 L9 0 M0 -36 L-14 -42 M0 -36 L12 -24"/>
+    </symbol>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--muted)"/></marker>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="txt">
+      <span class="eyebrow">清大科管所｜供應鏈管理　期末小組專題提案</span>
+      <h1>艷麗 Pondok Sunny：一塊娘惹糕的四條路</h1>
+      <p class="q">手工、效期短的娘惹糕，怎麼同時供應門市、市集、冷凍宅配與禮盒？</p>
+      <p class="meta">個案：新竹艷麗南洋鹹甜食　·　更新 2026-10-20　·　組內討論用</p>
+    </div>
+    <svg viewBox="0 0 220 200" width="220" role="img" aria-label="七層彩虹娘惹糕插圖">
+      <ellipse cx="110" cy="182" rx="92" ry="10" fill="var(--line)"/>
+      <g transform="translate(40 34)">
+        <path d="M0 26 L70 0 L140 26 L140 144 L70 170 L0 144Z" fill="var(--surface)"/>
+        <g>
+          <path d="M0 26 L70 52 L70 170 L0 144Z" fill="var(--rose)"/>
+          <path d="M0 43 L70 69 L70 86 L0 60Z" fill="var(--peach)"/>
+          <path d="M0 60 L70 86 L70 103 L0 77Z" fill="var(--mustard)"/>
+          <path d="M0 77 L70 103 L70 120 L0 94Z" fill="var(--sage)"/>
+          <path d="M0 94 L70 120 L70 137 L0 111Z" fill="var(--sage-d)" opacity=".75"/>
+          <path d="M0 111 L70 137 L70 154 L0 128Z" fill="var(--blue)"/>
+          <path d="M0 128 L70 154 L70 170 L0 144Z" fill="var(--lav)"/>
+        </g>
+        <path d="M70 52 L140 26 L140 144 L70 170Z" fill="var(--rose-l)"/>
+        <path d="M0 26 L70 0 L140 26 L70 52Z" fill="var(--rose)" opacity=".7"/>
+        <path d="M0 26 L70 52 L140 26 M70 52 V170" fill="none" stroke="var(--ink)" stroke-width="1.5" opacity=".25"/>
+      </g>
+      <text x="196" y="74" class="sub" text-anchor="end">7 層</text>
+    </svg>
+  </div>
+
+  <!-- REQUIREMENTS -->
+  <section>
+    <div class="head"><h2>老師要求 Checkpoints</h2></div>
+    <div class="checks">
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--sage-l)"/><path d="M7 13.5l4 4 8-9" class="st" stroke="var(--sage-d)"/></svg><div><b>自選企業＋供應鏈問題</b><span>小店但有 4 條通路</span></div></div>
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--mustard-l)"/><text x="13" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="var(--mustard-d)">?</text></svg><div><b>可實際訪談</b><span>店近清大、常受訪，需先聯絡確認</span></div></div>
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--sage-l)"/><path d="M7 13.5l4 4 8-9" class="st" stroke="var(--sage-d)"/></svg><div><b>提出改善建議</b><span>小企業建議容易落地</span></div></div>
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--blue-l)"/><path d="M13 7v6l4 3" class="st" stroke="var(--blue-d)"/></svg><div><b>發表 10 分鐘</b><span>12/14 午夜前繳簡報 pdf</span></div></div>
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--blue-l)"/><path d="M8 7h10v12H8z M10.5 11h5 M10.5 14h5" class="st" stroke="var(--blue-d)" stroke-width="1.8"/></svg><div><b>報告 ≥3,000 字</b><span>12/22 午夜前繳交</span></div></div>
+      <div class="chk"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="var(--lav-l)"/><text x="13" y="17.5" text-anchor="middle" font-size="10" font-weight="700" fill="var(--lav-d)">30%</text></svg><div><b>Turnitin &lt; 30%</b><span>訪談一手資料，好控制</span></div></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section>
+    <div class="head"><h2>個案故事</h2><p class="meta">從雜貨店寄賣，長成四條通路</p></div>
+    <div class="story">
+      <div class="fr"><svg width="64" height="64" viewBox="0 0 64 64"><rect x="30" y="30" width="28" height="24" fill="var(--mustard-l)" stroke="var(--ink)" stroke-width="1.8"/><path d="M30 30 L44 20 L58 30" class="st" stroke-width="1.8"/><use href="#man" x="2" y="0" width="30" height="58" transform="translate(4 4)"/></svg><span class="n">1</span><b>寄賣</b><span class="s">媽媽做糕寄賣雜貨店</span></div>
+      <div class="fr"><svg width="64" height="64" viewBox="0 0 64 64"><use href="#man" x="2" y="4" width="28" height="56"/><use href="#manW" x="32" y="10" width="24" height="50"/></svg><span class="n">2</span><b>母女開店</b><span class="s">約十年前，香山牛埔路</span></div>
+      <div class="fr"><svg width="64" height="64" viewBox="0 0 64 64"><rect x="8" y="22" width="48" height="34" fill="var(--sage-l)" stroke="var(--ink)" stroke-width="1.8"/><path d="M4 22 L32 8 L60 22" class="st" stroke-width="1.8"/><rect x="26" y="38" width="12" height="18" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="32" y="32" text-anchor="middle" font-size="9" font-weight="700" fill="var(--sage-d)">50 席</text></svg><span class="n">3 · 2020</span><b>搬到車站旁</b><span class="s">座位擴到約 50 人</span></div>
+      <div class="fr"><svg width="64" height="64" viewBox="0 0 64 64"><g transform="translate(12 10)"><rect y="0" width="40" height="6" fill="var(--rose)"/><rect y="6" width="40" height="6" fill="var(--peach)"/><rect y="12" width="40" height="6" fill="var(--mustard)"/><rect y="18" width="40" height="6" fill="var(--sage)"/><rect y="24" width="40" height="6" fill="var(--sage-d)" opacity=".75"/><rect y="30" width="40" height="6" fill="var(--blue)"/><rect y="36" width="40" height="6" fill="var(--lav)"/></g><text x="32" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="var(--ink)">×18 口味</text></svg><span class="n">4</span><b>招牌產品</b><span class="s">娘惹糕 18 種口味</span></div>
+      <div class="fr"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="7" fill="var(--rose)"/><path d="M32 25 V8 M37 37 L54 54 M27 37 L10 54 M39 32 H58" class="st" stroke-width="1.8"/><circle cx="32" cy="8" r="4" fill="var(--sage)"/><circle cx="56" cy="54" r="4" fill="var(--blue)"/><circle cx="8" cy="54" r="4" fill="var(--mustard)"/><circle cx="58" cy="32" r="4" fill="var(--lav)"/></svg><span class="n">5</span><b>4 條通路</b><span class="s">門市・市集・宅配・禮盒</span></div>
+      <div class="fr alert"><svg width="64" height="64" viewBox="0 0 64 64"><path d="M32 8 L58 54 H6Z" fill="var(--surface)" stroke="var(--rose-d)" stroke-width="2.4" stroke-linejoin="round"/><path d="M32 24 V40" stroke="var(--rose-d)" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="47" r="2" fill="var(--rose-d)"/></svg><span class="n">6</span><b>產能有限</b><span class="s">手工、效期短、需求起伏</span></div>
+    </div>
+  </section>
+
+  <!-- SUPPLY CHAIN SCENE -->
+  <section>
+    <div class="head"><h2>供應鏈地圖</h2><p class="meta">假設版，紅色編號是訪談要驗證的痛點</p></div>
+    <div class="panel scroll">
+      <svg viewBox="0 0 1000 400" style="min-width:720px;width:100%;display:block" role="img" aria-label="艷麗供應鏈火柴人示意圖">
+        <!-- zone backdrops -->
+        <rect x="10" y="20" width="200" height="370" rx="14" fill="var(--blue-l)"/>
+        <rect x="230" y="20" width="200" height="370" rx="14" fill="var(--mustard-l)"/>
+        <rect x="450" y="20" width="160" height="370" rx="14" fill="var(--lav-l)"/>
+        <rect x="630" y="20" width="360" height="370" rx="14" fill="var(--sage-l)"/>
+        <text x="110" y="46" text-anchor="middle" class="lbl">① 原料 Source</text>
+        <text x="330" y="46" text-anchor="middle" class="lbl">② 生產 Make</text>
+        <text x="530" y="46" text-anchor="middle" class="lbl">③ 庫存</text>
+        <text x="810" y="46" text-anchor="middle" class="lbl">④ 通路 Deliver</text>
+
+        <!-- ship -->
+        <path d="M40 170 H180 L162 200 H58Z" fill="var(--blue)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M30 210 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" class="st" stroke="var(--blue-d)" stroke-width="1.6"/>
+        <rect x="62" y="142" width="34" height="28" fill="var(--sage)" stroke="var(--ink)" stroke-width="1.6"/>
+        <rect x="100" y="148" width="30" height="22" fill="var(--mustard)" stroke="var(--ink)" stroke-width="1.6"/>
+        <rect x="134" y="138" width="30" height="32" fill="var(--peach)" stroke="var(--ink)" stroke-width="1.6"/>
+        <text x="110" y="232" text-anchor="middle" class="sub">東南亞進口</text>
+        <text x="110" y="248" text-anchor="middle" class="sub">香蘭葉・香料・椰糖・天貝</text>
+        <!-- local basket -->
+        <path d="M70 300 H150 L140 340 H80Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/>
+        <circle cx="92" cy="296" r="9" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.6"/><circle cx="112" cy="292" r="10" fill="var(--mustard-l)" stroke="var(--ink)" stroke-width="1.6"/><circle cx="130" cy="297" r="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.6"/>
+        <text x="110" y="364" text-anchor="middle" class="sub">台灣在地：木薯粉・糯米・椰漿</text>
+        <circle cx="186" cy="132" r="12" class="pm"/><text x="186" y="136.5" text-anchor="middle" class="pmt">1</text>
+
+        <!-- kitchen -->
+        <path d="M200 200 C 220 200, 230 210, 252 210" class="flow" marker-end="url(#ah)"/>
+        <path d="M160 316 C 200 316, 220 260, 252 250" class="flow" marker-end="url(#ah)"/>
+        <rect x="300" y="250" width="70" height="12" fill="var(--ink)" opacity=".15"/>
+        <g>
+          <rect x="305" y="170" width="60" height="18" rx="3" fill="var(--rose)" stroke="var(--ink)" stroke-width="1.6"/>
+          <rect x="305" y="188" width="60" height="18" rx="3" fill="var(--sage)" stroke="var(--ink)" stroke-width="1.6"/>
+          <rect x="305" y="206" width="60" height="18" rx="3" fill="var(--blue)" stroke="var(--ink)" stroke-width="1.6"/>
+          <rect x="300" y="224" width="70" height="26" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/>
+          <path d="M320 160 q-6 -10 0 -20 q6 -10 0 -20 M335 160 q-6 -10 0 -20 q6 -10 0 -20 M350 160 q-6 -10 0 -20 q6 -10 0 -20" class="st" stroke="var(--muted)" stroke-width="1.6"/>
+        </g>
+        <use href="#manW" x="242" y="190" width="50" height="80"/>
+        <use href="#man" x="372" y="190" width="50" height="80"/>
+        <text x="330" y="300" text-anchor="middle" class="sub">母女＋少數夥伴手工蒸炊</text>
+        <text x="330" y="316" text-anchor="middle" class="sub">一層一層蒸到 7 層</text>
+        <circle cx="400" cy="160" r="12" class="pm"/><text x="400" y="164.5" text-anchor="middle" class="pmt">2</text>
+
+        <!-- freezer -->
+        <path d="M420 230 H470" class="flow" marker-end="url(#ah)"/>
+        <rect x="485" y="120" width="90" height="170" rx="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M485 190 H575" stroke="var(--ink)" stroke-width="1.8"/>
+        <path d="M563 140 v30 M563 205 v30" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        <g class="st" stroke="var(--blue-d)" stroke-width="2"><path d="M520 140 v30 M507 147 l26 16 M507 163 l26 -16"/></g>
+        <text x="530" y="230" text-anchor="middle" class="sub">冷藏</text>
+        <text x="530" y="246" text-anchor="middle" class="sub">當日現售</text>
+        <text x="530" y="316" text-anchor="middle" class="sub">冷凍：宅配</text>
+        <text x="530" y="332" text-anchor="middle" class="sub">與禮盒備貨</text>
+        <circle cx="586" cy="110" r="12" class="pm"/><text x="586" y="114.5" text-anchor="middle" class="pmt">3</text>
+
+        <!-- branches -->
+        <path d="M580 205 C 610 205, 620 100, 650 100" class="flow" marker-end="url(#ah)"/>
+        <path d="M580 205 C 610 205, 620 180, 650 180" class="flow" marker-end="url(#ah)"/>
+        <path d="M580 205 C 610 205, 620 260, 650 262" class="flow" marker-end="url(#ah)"/>
+        <path d="M580 205 C 610 205, 620 340, 650 342" class="flow" marker-end="url(#ah)"/>
+
+        <!-- 門市 -->
+        <rect x="660" y="80" width="70" height="36" fill="var(--rose-l)" stroke="var(--ink)" stroke-width="1.8"/>
+        <rect x="672" y="70" width="22" height="10" fill="var(--rose)"/><rect x="700" y="70" width="18" height="10" fill="var(--mustard)"/>
+        <use href="#man" x="740" y="58" width="40" height="64"/>
+        <text x="800" y="94" class="lbl">門市內用／外帶</text>
+        <text x="800" y="110" class="sub">每天穩定、可現做</text>
+
+        <!-- 宅配 -->
+        <rect x="660" y="160" width="46" height="34" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/>
+        <path d="M706 172 H724 L734 184 V194 H706Z" fill="var(--blue-l)" stroke="var(--ink)" stroke-width="1.8"/>
+        <circle cx="672" cy="198" r="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/><circle cx="722" cy="198" r="6" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/>
+        <g class="st" stroke="var(--blue-d)" stroke-width="1.6"><path d="M683 166 v20 M674 171 l18 10 M674 181 l18 -10"/></g>
+        <path d="M742 184 h16" class="flow" marker-end="url(#ah)"/>
+        <path d="M764 194 v-16 l12 -10 l12 10 v16z" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.8"/>
+        <text x="800" y="176" class="lbl">冷凍宅配</text>
+        <text x="800" y="192" class="sub">線上下單・低溫物流</text>
+
+        <!-- 市集 -->
+        <path d="M660 252 L700 232 L740 252Z" fill="var(--mustard)" stroke="var(--ink)" stroke-width="1.8"/>
+        <path d="M666 252 V284 M734 252 V284" class="st" stroke-width="1.8"/>
+        <rect x="672" y="268" width="56" height="10" fill="var(--rose-l)" stroke="var(--ink)" stroke-width="1.4"/>
+        <use href="#manW" x="738" y="236" width="36" height="58"/>
+        <text x="800" y="258" class="lbl">市集擺攤</text>
+        <text x="800" y="274" class="sub">一次性、需求難估</text>
+
+        <!-- 禮盒 -->
+        <rect x="664" y="320" width="46" height="38" fill="var(--lav)" stroke="var(--ink)" stroke-width="1.8"/>
+        <rect x="660" y="312" width="54" height="10" fill="var(--lav-l)" stroke="var(--ink)" stroke-width="1.8"/>
+        <path d="M687 312 V358" stroke="var(--rose-d)" stroke-width="3"/>
+        <path d="M687 312 q-10 -12 -14 -2 q2 4 14 2 q10 -12 14 -2 q-2 4 -14 2" fill="none" stroke="var(--rose-d)" stroke-width="2"/>
+        <rect x="726" y="318" width="34" height="36" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.6"/>
+        <rect x="726" y="318" width="34" height="9" fill="var(--rose)"/>
+        <text x="743" y="347" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">年節</text>
+        <text x="800" y="338" class="lbl">節慶禮盒／團購</text>
+        <text x="800" y="354" class="sub">尖峰集中、量大</text>
+        <circle cx="966" cy="300" r="12" class="pm"/><text x="966" y="304.5" text-anchor="middle" class="pmt">4</text>
+      </svg>
+    </div>
+    <div class="pains">
+      <div class="pain"><span class="num">1</span><div><b>進口前置時間</b><span>斷貨或價格波動</span></div></div>
+      <div class="pain"><span class="num">2</span><div><b>手工產能瓶頸</b><span>工時長、難彈性擴充</span></div></div>
+      <div class="pain"><span class="num">3</span><div><b>庫存兩難</b><span>做多報廢、做少斷貨</span></div></div>
+      <div class="pain"><span class="num">4</span><div><b>需求起伏不同</b><span>市集、禮盒最難預測</span></div></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section>
+    <div class="head"><h2>產品線</h2><p class="meta">不同產品的保存方式，決定能走哪條通路（細節待訪談確認）</p></div>
+    <div class="prods">
+      <div class="prod">
+        <svg width="110" height="80" viewBox="0 0 110 80"><g transform="translate(15 10)"><rect y="0" width="80" height="8" rx="2" fill="var(--rose)"/><rect y="8" width="80" height="8" fill="var(--peach)"/><rect y="16" width="80" height="8" fill="var(--mustard)"/><rect y="24" width="80" height="8" fill="var(--sage)"/><rect y="32" width="80" height="8" fill="var(--sage-d)" opacity=".75"/><rect y="40" width="80" height="8" fill="var(--blue)"/><rect y="48" width="80" height="8" rx="2" fill="var(--lav)"/></g><ellipse cx="55" cy="72" rx="44" ry="4" fill="var(--line)"/></svg>
+        <h3>彩虹娘惹糕</h3><span class="s">七層蒸炊，18 種口味中的招牌</span>
+        <div class="tags"><span class="pill p-rose">門市</span><span class="pill p-mus">市集</span><span class="pill p-blue">宅配?</span></div>
+      </div>
+      <div class="prod">
+        <svg width="110" height="80" viewBox="0 0 110 80"><g transform="translate(15 12)"><rect width="80" height="52" rx="3" fill="var(--mustard-l)"/><g fill="var(--mustard-d)" opacity=".55"><rect y="4" width="80" height="3"/><rect y="11" width="80" height="3"/><rect y="18" width="80" height="3"/><rect y="25" width="80" height="3"/><rect y="32" width="80" height="3"/><rect y="39" width="80" height="3"/><rect y="46" width="80" height="3"/></g></g><ellipse cx="55" cy="72" rx="44" ry="4" fill="var(--line)"/></svg>
+        <h3>千層派</h3><span class="s">連續烘烤約三小時，最耗工</span>
+        <div class="tags"><span class="pill p-rose">門市</span><span class="pill p-lav">禮盒</span></div>
+      </div>
+      <div class="prod">
+        <svg width="110" height="80" viewBox="0 0 110 80"><path d="M20 24 L55 12 L90 24 L90 62 L55 74 L20 62Z" fill="var(--blue-l)" stroke="var(--ink)" stroke-width="1.8"/><path d="M20 24 L55 36 L90 24 M55 36 V74" fill="none" stroke="var(--ink)" stroke-width="1.6"/><g class="st" stroke="var(--blue-d)" stroke-width="2"><path d="M38 40 v18 M30 44 l16 10 M30 54 l16 -10"/></g></svg>
+        <h3>冷凍宅配組</h3><span class="s">讓糕點走出新竹的關鍵通路</span>
+        <div class="tags"><span class="pill p-blue">宅配</span></div>
+      </div>
+      <div class="prod">
+        <svg width="110" height="80" viewBox="0 0 110 80"><rect x="25" y="28" width="60" height="44" fill="var(--lav)" stroke="var(--ink)" stroke-width="1.8"/><rect x="20" y="20" width="70" height="12" fill="var(--lav-l)" stroke="var(--ink)" stroke-width="1.8"/><path d="M55 20 V72" stroke="var(--rose-d)" stroke-width="4"/><path d="M55 20 q-14 -16 -20 -3 q3 5 20 3 q14 -16 20 -3 q-3 5 -20 3" fill="none" stroke="var(--rose-d)" stroke-width="2.4"/></svg>
+        <h3>節慶禮盒</h3><span class="s">年節送禮、團購、企業訂單</span>
+        <div class="tags"><span class="pill p-lav">禮盒</span><span class="pill p-blue">宅配</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMAND PATTERNS -->
+  <section>
+    <div class="head"><h2>四條通路，四種需求曲線</h2><p class="meta">示意圖，不是實際數據；訪談後用真實訂單量替換</p></div>
+    <div class="dem">
+      <div class="dm"><b>門市</b>
+        <svg viewBox="0 0 160 60"><path d="M4 56 H156" stroke="var(--line)"/><path d="M4 34 L20 32 L36 26 L52 34 L68 33 L84 25 L100 34 L116 32 L132 25 L148 33 L156 32" class="st" stroke="var(--rose-d)" stroke-width="2"/><path d="M4 34 L20 32 L36 26 L52 34 L68 33 L84 25 L100 34 L116 32 L132 25 L148 33 L156 32 V56 H4Z" fill="var(--rose-l)" opacity=".7"/></svg>
+        <span>平穩，週末小高峰</span></div>
+      <div class="dm"><b>冷凍宅配</b>
+        <svg viewBox="0 0 160 60"><path d="M4 56 H156" stroke="var(--line)"/><path d="M4 46 L24 44 L44 40 L64 39 L84 34 L104 30 L124 27 L144 22 L156 20" class="st" stroke="var(--blue-d)" stroke-width="2"/><path d="M4 46 L24 44 L44 40 L64 39 L84 34 L104 30 L124 27 L144 22 L156 20 V56 H4Z" fill="var(--blue-l)" opacity=".8"/></svg>
+        <span>可能穩定成長</span></div>
+      <div class="dm"><b>市集</b>
+        <svg viewBox="0 0 160 60"><path d="M4 56 H156" stroke="var(--line)"/><path d="M4 54 L30 54 L34 18 L40 54 L80 54 L84 26 L90 54 L120 54 L124 12 L130 54 L156 54" class="st" stroke="var(--mustard-d)" stroke-width="2"/><path d="M4 54 L30 54 L34 18 L40 54 L80 54 L84 26 L90 54 L120 54 L124 12 L130 54 L156 54 V56 H4Z" fill="var(--mustard-l)"/></svg>
+        <span>一次性尖峰，難估量</span></div>
+      <div class="dm"><b>節慶禮盒</b>
+        <svg viewBox="0 0 160 60"><path d="M4 56 H156" stroke="var(--line)"/><path d="M4 52 L40 51 L60 48 L72 20 L80 8 L88 22 L100 49 L130 50 L140 40 L148 50 L156 51" class="st" stroke="var(--lav-d)" stroke-width="2"/><path d="M4 52 L40 51 L60 48 L72 20 L80 8 L88 22 L100 49 L130 50 L140 40 L148 50 L156 51 V56 H4Z" fill="var(--lav-l)"/><text x="80" y="6" text-anchor="middle" font-size="8" fill="var(--lav-d)" dy="0">年節</text></svg>
+        <span>集中在年節，量大</span></div>
+    </div>
+  </section>
+
+  <!-- RESEARCH OPTIONS -->
+  <section>
+    <div class="head"><h2>三個研究主軸，選一個</h2><p class="meta">訪談後依店家實際痛點決定，建議 A＋B</p></div>
+    <div class="opts">
+      <div class="opt pick"><span class="pill p-sage">建議主軸</span><h3>A. 多通路需求與產能規劃</h3><span class="s">有限的手工產能怎麼分給四條通路？年節尖峰怎麼撐？</span><span class="th">Fisher 配適・推拉邊界・延遲策略・聚合規劃</span></div>
+      <div class="opt"><span class="pill p-blue">併入 A</span><h3>B. 冷凍宅配與冷鏈</h3><span class="s">冷凍影響口感嗎？運費、破損、客訴怎麼控制？</span><span class="th">冷鏈管理・服務水準 vs 成本・逆物流</span></div>
+      <div class="opt"><span class="pill p-rose">備案</span><h3>C. 進口原料採購</h3><span class="s">香料前置時間長、價格波動，該備多少？</span><span class="th">EOQ・安全庫存・供應風險</span></div>
+    </div>
+  </section>
+
+  <!-- POSTPONEMENT -->
+  <section>
+    <div class="head"><h2>可能的改善方向：延遲策略</h2><p class="meta">接軌課堂 Penang Electronics 個案</p></div>
+    <div class="post">
+      <div class="panel">
+        <h3>現在（推測）：每條通路各自做成品</h3>
+        <svg viewBox="0 0 300 120" width="100%" role="img" aria-label="現況流程">
+          <g fill="var(--rose)"><rect x="10" y="10" width="40" height="22" rx="3"/><rect x="10" y="36" width="40" height="22" rx="3"/><rect x="10" y="62" width="40" height="22" rx="3"/><rect x="10" y="88" width="40" height="22" rx="3"/></g>
+          <g class="flow"><path d="M54 21 H220" marker-end="url(#ah)"/><path d="M54 47 H220" marker-end="url(#ah)"/><path d="M54 73 H220" marker-end="url(#ah)"/><path d="M54 99 H220" marker-end="url(#ah)"/></g>
+          <text x="232" y="25" class="sub">門市</text><text x="232" y="51" class="sub">宅配</text><text x="232" y="77" class="sub">市集</text><text x="232" y="103" class="sub">禮盒</text>
+          <text x="135" y="64" text-anchor="middle" class="lbl" fill="var(--rose-d)" style="fill:var(--rose-d)">預估錯就報廢</text>
+        </svg>
+      </div>
+      <div class="panel">
+        <h3>建議：先做共用半成品，接單後再分流</h3>
+        <svg viewBox="0 0 300 120" width="100%" role="img" aria-label="延遲策略流程">
+          <rect x="10" y="40" width="64" height="40" rx="4" fill="var(--blue-l)" stroke="var(--blue-d)" stroke-width="1.6"/>
+          <text x="42" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-d)">冷凍</text><text x="42" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="var(--blue-d)">半成品</text>
+          <path d="M78 60 H118" class="flow" marker-end="url(#ah)"/>
+          <circle cx="134" cy="60" r="14" fill="var(--sage)" /><text x="134" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">接單</text>
+          <g class="flow"><path d="M150 54 C 180 30, 190 21, 220 21" marker-end="url(#ah)"/><path d="M150 58 C 180 50, 190 47, 220 47" marker-end="url(#ah)"/><path d="M150 62 C 180 70, 190 73, 220 73" marker-end="url(#ah)"/><path d="M150 66 C 180 90, 190 99, 220 99" marker-end="url(#ah)"/></g>
+          <text x="232" y="25" class="sub">切片現售</text><text x="232" y="51" class="sub">分裝宅配</text><text x="232" y="77" class="sub">市集備貨</text><text x="232" y="103" class="sub">組合禮盒</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOR + ROLES -->
+  <section>
+    <div class="head"><h2>分析骨架與分工</h2><p class="meta">用 SCOR 五個流程切，每人負責一段，各提一個改善建議</p></div>
+    <div class="scor">
+      <div class="sc" style="background:var(--lav-l)"><b>Plan</b><span>需求、產能分配</span><div class="sc who">D</div></div>
+      <div class="sc" style="background:var(--mustard-l)"><b>Source</b><span>進口原料</span><div class="sc who">B</div></div>
+      <div class="sc" style="background:var(--mustard-l)"><b>Make</b><span>手工排程</span><div class="sc who">B</div></div>
+      <div class="sc" style="background:var(--blue-l)"><b>Deliver</b><span>冷鏈、市集</span><div class="sc who">C</div></div>
+      <div class="sc" style="background:var(--blue-l)"><b>Return</b><span>客訴、報廢</span><div class="sc who">C</div></div>
+    </div>
+    <div class="roles">
+      <div class="role">
+        <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--rose-l)"/><use href="#manW" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--rose-d)">A</text></svg>
+        <h3>統籌・訪談</h3>
+        <ul><li>聯絡店家、主持訪談</li><li>公司介紹、緒論、結論</li><li>統整報告、控字數</li></ul>
+        <span class="out">簡報：開場＋結論</span></div>
+      <div class="role">
+        <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--mustard-l)"/><use href="#man" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--mustard-d)">B</text></svg>
+        <h3>上游：採購・生產</h3>
+        <ul><li>原料來源、前置時間</li><li>廚房產能、瓶頸</li><li>建議：安全庫存或生產標準化</li></ul>
+        <span class="out">簡報：Source / Make</span></div>
+      <div class="role">
+        <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--blue-l)"/><use href="#man" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-d)">C</text></svg>
+        <h3>下游：通路・冷鏈</h3>
+        <ul><li>宅配流程、物流、客訴</li><li>市集備貨與運送</li><li>建議：冷鏈或延遲策略</li></ul>
+        <span class="out">簡報：Deliver / Return</span></div>
+      <div class="role">
+        <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--lav-l)"/><use href="#manW" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--lav-d)">D</text></svg>
+        <h3>規劃：需求・數據</h3>
+        <ul><li>次級資料、訂單數據</li><li>需求曲線、理論診斷</li><li>建議：禮盒預購機制</li><li>簡報視覺統一</li></ul>
+        <span class="out">簡報：問題診斷</span></div>
+    </div>
+  </section>
+
+  <!-- INTERVIEW -->
+  <section>
+    <div class="head"><h2>訪談要問的六件事</h2><p class="meta">全員出席，A 主訪；B、C 觀察廚房與出貨，D 整理次級資料</p></div>
+    <div class="iv">
+      <div class="ivq"><span class="pill p-lav tg">Plan</span>四條通路各占營收多少？哪條最麻煩？</div>
+      <div class="ivq"><span class="pill p-mus tg">Make</span>一天最多做幾條？瓶頸在人、設備還是蒸炊時間？</div>
+      <div class="ivq"><span class="pill p-lav tg">Plan</span>禮盒和市集的量怎麼估？有沒有報廢或來不及做？</div>
+      <div class="ivq"><span class="pill p-blue tg">Deliver</span>宅配用哪家物流？運費誰吸收？常見客訴？</div>
+      <div class="ivq"><span class="pill p-mus tg">Source</span>哪些原料一定要進口？多久叫一次？斷過貨嗎？</div>
+      <div class="ivq"><span class="pill p-sage tg">未來</span>如果擴大宅配或接企業單，最擔心什麼？</div>
+    </div>
+  </section>
+
+  <!-- PRESENTATION -->
+  <section>
+    <div class="head"><h2>發表 10 分鐘</h2></div>
+    <div class="bar">
+      <div style="flex:1.5;background:var(--rose-l)">公司與問題<small>1.5 分・A</small></div>
+      <div style="flex:2.5;background:var(--mustard-l)">供應鏈現況<small>2.5 分・B＋C</small></div>
+      <div style="flex:2.5;background:var(--lav-l)">問題診斷<small>2.5 分・D</small></div>
+      <div style="flex:2.5;background:var(--sage-l)">改善建議<small>2.5 分・全員</small></div>
+      <div style="flex:1;background:var(--blue-l)">結論<small>1 分・A</small></div>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section>
+    <div class="head"><h2>期末報告字數分配</h2><p class="meta">目標 <span class="mono">3,900</span> 字，比門檻多留 <span class="mono">900</span> 字緩衝</p></div>
+    <div class="panel rep">
+      <div class="rrow"><span>一、緒論</span><div class="track"><div class="fill" style="width:50%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
+      <div class="rrow"><span>二、公司介紹</span><div class="track"><div class="fill" style="width:62.5%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
+      <div class="rrow"><span>三、Source / Make</span><div class="track"><div class="fill" style="width:75%;background:var(--mustard)"></div></div><span class="who" style="background:var(--mustard-l)">B</span></div>
+      <div class="rrow"><span>三、Deliver / Return</span><div class="track"><div class="fill" style="width:75%;background:var(--blue)"></div></div><span class="who" style="background:var(--blue-l)">C</span></div>
+      <div class="rrow"><span>四、問題診斷</span><div class="track"><div class="fill" style="width:87.5%;background:var(--lav)"></div></div><span class="who" style="background:var(--lav-l)">D</span></div>
+      <div class="rrow"><span>五、改善建議</span><div class="track"><div class="fill" style="width:100%;background:var(--sage)"></div></div><span class="who" style="background:var(--sage-l)">全</span></div>
+      <div class="rrow"><span>六、結論與限制</span><div class="track"><div class="fill" style="width:37.5%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
+      <p class="meta" style="margin-top:6px">長條長度＝字數（400 / 500 / 600 / 600 / 700 / 800 / 300）。引用文獻一律改寫，Turnitin 比較安全。</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="head"><h2>時程：從今天到 12/22</h2><p class="meta">依組內暫定時程排入艷麗的工作，間距為示意</p></div>
+    <div class="panel tl2">
+      <div class="trk">
+        <div class="nd dash up"><div class="top"><div class="lb"><b>10/20（二）</b><span>討論</span><span>課後討論 Final 方向</span><em class="ok">提案艷麗</em></div></div><span class="dot"></span><div class="bot"></div></div>
+        <div class="nd dash dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>10/27（二）</b><span>討論</span><span>定題＋分工</span><em class="ok">A 聯絡店家約訪</em></div></div></div>
+        <div class="nd dash up"><div class="top"><div class="lb"><b>10/28–11/2</b><span>完成</span><span>Intro 簡報</span><em class="ok">先去店裡消費觀察</em></div></div><span class="dot"></span><div class="bot"></div></div>
+        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>11/3（二）</b><span>上台 Final Intro</span><span>用這頁的故事＋供應鏈地圖</span><em class="other">同時完成 Case Report</em></div></div></div>
+        <div class="nd solid up muted"><div class="top"><div class="lb"><b>11/17（二）</b><span>上台</span><span>20 分鐘 Case Report</span><em>繳件 DDL 11/16 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
+        <div class="nd dash dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>11/18–11/27</b><span>完成</span><span>正式訪談＋現場觀察</span><em class="ok">各自寫分析</em></div></div></div>
+        <div class="nd dash up"><div class="top"><div class="lb"><b>12/4（五）</b><span>完成</span><span>Final Report 簡報</span><em>DDL 12/4 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
+        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>12/15（二）</b><span>上台</span><span>10 分鐘 Final Report</span><em>繳件 DDL 12/14 23:59</em></div></div></div>
+        <div class="nd dash up"><div class="top"><div class="lb"><b>12/20（日）</b><span>完成</span><span>3,000 字 Final Doc</span><em>DDL 12/20 23:59</em></div></div><span class="dot"></span><div class="bot"></div></div>
+        <div class="nd solid dn"><div class="top"></div><span class="dot"></span><div class="bot"><div class="lb"><b>12/22（二）</b><span>繳件</span><span>Final Doc</span><em>繳件 DDL 12/22 23:59</em></div></div></div>
+      </div>
+      <div class="lgd">
+        <span><i class="dot s"></i>上台・繳件（課程規定）</span>
+        <span><i class="dot d"></i>討論・完成（組內節點，可調）</span>
+        <span><em class="ok">綠字</em>＝艷麗專題要做的事</span>
+        <span class="mutedtxt">灰色＝Penang 個案，不屬於本專題</span>
+      </div>
+    </div>
+    <div class="todo">
+      <div><b>11/3 Intro 前</b>　還沒正式訪談，Intro 先講二手資料＋第一次到店觀察；訪談意願最好 10/27 就問到</div>
+      <div><b>11/18–11/27 是最緊的一段</b>　Case Report 一結束就訪談，只剩一週做 12/4 的簡報，建議訪談約在 11/18–11/20</div>
+    </div>
+  </section>
+
+  <!-- TODO -->
+  <section>
+    <div class="head"><h2>提案前待確認</h2></div>
+    <div class="todo">
+      <div>☐ 店家願不願意受訪、能否給通路比例或月訂單量</div>
+      <div>☐ 冷凍宅配走哪個平台、哪家低溫物流</div>
+      <div>☐ 禮盒有沒有企業大單或團購、尖峰在哪幾個月</div>
+      <div>☐ 若拒訪：改備案 C，或換另一家有冷凍宅配的新竹品牌</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><h2>資料來源</h2></div>
+    <ul class="src">
+      <li><a href="https://www.thenewslens.com/article/268365">關鍵評論網《被世界端上桌》書摘：艷麗 Pondok Sunny 三代傳承（2026/6/9）</a></li>
+      <li><a href="https://news.immigration.gov.tw/NewsSection/Detail/84c474ae-ab96-489e-b3ce-e717d4a9eef4?lang=EN">移民署新住民全球新聞網：新二代李依庭與 Pondok Sunny</a></li>
+      <li><a href="https://n.yam.com/Article/20230520745216">大成報：新竹國國市集與艷麗娘惹層糕（2023/5/20）</a></li>
+    </ul>
+    <p class="meta">冷凍宅配與禮盒的實際運作尚未查到公開資料，以訪談為準。</p>
+  </section>
+
+  <footer>供應鏈管理期末專題　·　組內討論用</footer>
+</div>
+
+</body>
+</html>
