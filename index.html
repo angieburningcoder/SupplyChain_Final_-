@@ -241,7 +241,7 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 .tp.done .dot{border-color:var(--sage-d);background:var(--sage-d)}
 .oldnew{font-size:12.5px;color:var(--muted)}
 .oldnew s{color:var(--muted)}
-.swipe{display:none}@media(max-width:740px){.swipe{display:inline}}
+.swipe{display:none}@media(max-width:740px){.swipe{display:block}}
 .lt{display:flex;flex-direction:column;gap:2px;font-size:12.5px}
 .lt div{height:12px;border-radius:4px;background:var(--bg)}
 .lt div span{display:block;height:100%;border-radius:4px}
@@ -340,7 +340,7 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- SUPPLY CHAIN SCENE -->
   <section>
-    <div class="head"><h2>供應鏈地圖（訪談驗證版）</h2><p class="meta">綠色＝訪談確認沒問題，黃色＝次要問題，紅色＝真正瓶頸<span class="swipe">　·　手機請左右滑動看完整地圖</span></p></div>
+    <div class="head"><h2>供應鏈地圖（訪談驗證版）</h2><p class="meta">綠色＝訪談確認沒問題，黃色＝次要問題，紅色＝真正瓶頸<span class="swipe">← 左右滑動看完整地圖 →</span></p></div>
     <div class="panel scroll">
       <svg viewBox="0 0 1000 400" style="min-width:720px;width:100%;display:block" role="img" aria-label="艷麗供應鏈火柴人示意圖（訪談驗證版）">
         <rect x="10" y="20" width="200" height="370" rx="14" fill="var(--blue-l)"/>
@@ -439,7 +439,7 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- POSTPONEMENT (as-is) -->
   <section>
-    <div class="head"><h2>一份庫存，多種包裝：店家已經在做延遲策略</h2><p class="meta">對應課堂 Penang Electronics 個案；解耦點在「冷凍的單片娘惹糕」</p></div>
+    <div class="head"><h2>一份庫存，多種包裝：店家已經在做延遲策略</h2><p class="meta">對應課堂 Penang Electronics 個案；解耦點在「冷凍的單片娘惹糕」。報告中當背景，一段帶過</p></div>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       <div class="proc">
         <span class="stp">備料</span><span class="ar">→</span>
@@ -499,7 +499,7 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
       <div class="dgc"><b>2. 物流限制了營收上限</b>產能還有一半空著，但旺季仍因物流提前停止接單，等於把年節訂單擋在門外。<span class="th">TOC 瓶頸・Fisher：宅配需要反應能力，不只要效率</span></div>
       <div class="dgc"><b>3. 服務範圍有地區落差</b>新竹大單可用自有冷凍車，容易配合客製；外縣市依賴黑貓，較難提供同樣的服務。<span class="th">配送網路設計・顧客分群</span></div>
       <div class="dgc"><b>4. 宅配成長不划算</b>曾與網紅合作帶來約 100 筆訂單，但扣掉手續費後仍沒回收行銷費用；宅配另有物流費、手續費。<span class="th">單位經濟・通路成本</span></div>
-      <div class="dgc sec"><b>5.（次要）冷凍空間不足</b>店內放不下快閃櫃位的庫存，得另外租冷凍櫃；過年停產前要提前備貨，空間壓力更大。<span class="th">聚合規劃・平準化 vs. 追逐策略</span></div>
+      <div class="dgc sec"><b>5.（背景，不深入）冷凍空間不足</b>店內放不下快閃櫃位的庫存，另外租冷凍櫃。只在現況點到，若 B 的預購建議會用到更多冷凍空間再提。<span class="th">不列入主要分析</span></div>
       <div class="dgc sec"><b>6.（待確認）顧客端剩餘效期</b>
         <div class="shelf"><div style="flex:2.5;background:var(--blue-l);color:var(--blue-d)">配送 2～3 天</div><div style="flex:4.5;background:var(--sage-l);color:var(--sage-d)">顧客可用約 4～5 天</div></div>
         <span class="th">「保存期限 7 天」是冷凍、冷藏還是解凍後？口徑確認後才能用</span></div>
@@ -508,10 +508,10 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- RESEARCH AXES -->
   <section>
-    <div class="head"><h2>研究主軸：改以 B 為主</h2><p class="meta">原本建議 A＋B；訪談後主軸轉向冷凍宅配</p></div>
+    <div class="head"><h2>研究主軸：聚焦 B</h2><p class="meta">原本建議 A＋B；訪談後全部篇幅集中在冷凍宅配，生產與庫存只當背景</p></div>
     <div class="opts">
       <div class="opt pick"><span class="pill p-sage">核心主軸</span><h3>B. 冷凍宅配與冷鏈</h3><span class="s">物流不可控、旺季截單、地區落差、宅配成長的成本</span><span class="th">冷鏈管理・服務水準 vs 成本・TOC・Fisher 配適</span></div>
-      <div class="opt"><span class="pill p-blue">縮小保留</span><h3>A. 年節備貨與冷凍容量</h3><span class="s">不再談「產能怎麼分」，改談「閒置產能怎麼提前備貨、冷凍空間夠不夠」</span><span class="th">聚合規劃・平準化生產・延遲策略（現況）</span></div>
+      <div class="opt"><span class="pill p-blue">背景交代</span><h3>A. 生產與庫存</h3><span class="s">只用一段說明為什麼不是瓶頸（產能有餘、共用冷凍庫存），不深入探討，避免離題</span><span class="th">延遲策略（現況）</span></div>
       <div class="opt"><span class="pill p-rose">刪除</span><h3>C. 進口原料採購</h3><span class="s">訪談證實沒有斷貨問題，報告中一段帶過（只提漲價風險）</span><span class="th">—</span></div>
     </div>
   </section>
@@ -520,11 +520,11 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
   <section>
     <div class="head"><h2>三項改善建議</h2><p class="meta">每人一項，都能小規模試行；數字待補問後代入</p></div>
     <div class="recs">
-      <div class="rec"><span class="pill p-mus" style="align-self:flex-start">B 負責</span><h3>年節平準化生產＋冷凍容量規劃</h3>
-        <ul><li>用閒置的約 50% 產能，提早幾週分批備貨，取代節前 2 週才集中增產</li><li>估算過年檔期需要的冷凍容量</li><li>比較持續租冷凍櫃 vs. 自購的成本</li></ul>
-        <span class="th">理論：聚合規劃、平準化 vs. 追逐策略</span></div>
-      <div class="rec"><span class="pill p-blue" style="align-self:flex-start">C 負責</span><h3>分區配送＋年節預購錯峰</h3>
-        <ul><li>新竹（大單、企業單）用自有冷凍車，外縣市走黑貓</li><li>年節開放預購＋指定出貨日，在物流尖峰前分批出貨（冷凍品可提早寄）</li><li>提早公告截單日、出貨後主動通知，減少「未到貨」客訴</li><li>評估一家備援的低溫物流商</li></ul>
+      <div class="rec"><span class="pill p-mus" style="align-self:flex-start">B 負責</span><h3>年節預購＋提前出貨</h3>
+        <ul><li>年節開放預購，用閒置的約 50% 產能提前做好</li><li>冷凍品不影響口感，可在黑貓尖峰前分批先寄出</li><li>不用加人、加設備，把截單日往後延、多接年節訂單</li></ul>
+        <span class="th">理論：TOC「讓非瓶頸配合瓶頸」、需求管理</span></div>
+      <div class="rec"><span class="pill p-blue" style="align-self:flex-start">C 負責</span><h3>分區配送＋出貨透明化</h3>
+        <ul><li>新竹（大單、企業單）用自有冷凍車，外縣市走黑貓</li><li>提早公告截單日、出貨後主動通知，減少「未到貨」客訴</li><li>評估一家備援的低溫物流商</li><li>配合 B 的預購，訂出分批出貨日</li></ul>
         <span class="th">理論：配送網路設計、服務水準、需求管理</span></div>
       <div class="rec"><span class="pill p-lav" style="align-self:flex-start">D 負責</span><h3>宅配成長的單位經濟</h3>
         <ul><li>拆解每筆宅配的成本：運費、手續費、包材、滿千免運門檻</li><li>用網紅合作（約 100 筆未回本）算損益平衡訂單數</li><li>改成按銷售分潤的團購主合作，或開發企業團購（新竹大單可自己配送）</li></ul>
@@ -534,29 +534,29 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- SCOR + ROLES -->
   <section>
-    <div class="head"><h2>分析骨架與分工（重新平衡）</h2><p class="meta">Source / Make 內容變少 → 合併給 B；Deliver 成為核心 → C 專心做；Return 併入 Deliver</p></div>
+    <div class="head"><h2>分析骨架與分工（重新平衡）</h2><p class="meta">Source / Make / Stock 只當背景 → B 一段帶過，改負責研究方法；篇幅集中在 Deliver（C）與宅配經濟（D）</p></div>
     <div class="scor">
       <div class="sc" style="background:var(--lav-l)"><b>Plan</b><span>通路結構、需求波動、宅配經濟</span><div class="sc who">D</div></div>
       <div class="sc" style="background:var(--mustard-l)"><b>Source</b><span>一段帶過</span><div class="sc who">B</div></div>
-      <div class="sc" style="background:var(--mustard-l)"><b>Make＋Stock</b><span>產能、延遲策略、冷凍容量</span><div class="sc who">B</div></div>
+      <div class="sc" style="background:var(--mustard-l)"><b>Make＋Stock</b><span>背景：為何不是瓶頸</span><div class="sc who">B</div></div>
       <div class="sc" style="background:var(--blue-l)"><b>Deliver</b><span>黑貓、截單、地區落差（核心）</span><div class="sc who">C</div></div>
       <div class="sc" style="background:var(--blue-l)"><b>Return</b><span>併入 Deliver（客訴）</span><div class="sc who">C</div></div>
     </div>
     <div class="roles">
       <div class="role">
         <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--rose-l)"/><use href="#manW" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--rose-d)">A</text></svg>
-        <h3>統籌・研究方法・整理簡報</h3>
-        <ul><li>緒論、公司介紹、結論與限制</li><li><b>假設 vs. 訪談驗證表</b></li><li>聯絡店家補問數據</li><li><b>整理簡報</b></li></ul>
-        <span class="out">簡報：開場＋假設驗證、結論</span></div>
+        <h3>統籌・整理簡報</h3>
+        <ul><li>緒論、公司介紹、結論與限制</li><li>聯絡店家補問數據</li><li><b>整理簡報</b></li></ul>
+        <span class="out">簡報：開場、結論</span></div>
       <div class="role">
         <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--mustard-l)"/><use href="#man" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--mustard-d)">B</text></svg>
-        <h3>生產與庫存</h3>
-        <ul><li>原料、產能：為何不是瓶頸</li><li>現行延遲策略（扣 Penang）</li><li>冷凍空間、過年停產備貨</li><li>建議：平準化＋冷凍容量</li></ul>
-        <span class="out">簡報：供應鏈現況</span></div>
+        <h3>研究方法・現況</h3>
+        <ul><li><b>假設 vs. 訪談驗證表</b></li><li>生產、庫存為何不是瓶頸（一段帶過）</li><li>現行延遲做法（扣 Penang）</li><li>建議：年節預購＋提前出貨</li></ul>
+        <span class="out">簡報：假設驗證＋現況</span></div>
       <div class="role">
         <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--blue-l)"/><use href="#man" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--blue-d)">C</text></svg>
         <h3>配送（核心）</h3>
-        <ul><li>黑貓不可控、旺季提前截單</li><li>效期 vs. 配送天數</li><li>新竹 vs. 外縣市落差</li><li>客訴：未到貨、包裝</li><li>建議：分區配送＋預購錯峰</li></ul>
+        <ul><li>黑貓不可控、旺季提前截單</li><li>效期 vs. 配送天數</li><li>新竹 vs. 外縣市落差</li><li>客訴：未到貨、包裝</li><li>建議：分區配送＋出貨透明化</li></ul>
         <span class="out">簡報：問題診斷（物流）</span></div>
       <div class="role">
         <svg width="70" height="78" viewBox="0 0 70 78"><circle cx="35" cy="38" r="34" fill="var(--lav-l)"/><use href="#manW" x="15" y="8" width="40" height="64"/><rect x="44" y="14" width="18" height="14" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/><text x="53" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="var(--lav-d)">D</text></svg>
@@ -585,9 +585,9 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
   <section>
     <div class="head"><h2>發表 10 分鐘</h2></div>
     <div class="bar">
-      <div style="flex:1.5;background:var(--rose-l)">公司＋假設驗證<small>1.5 分・A</small></div>
-      <div style="flex:2;background:var(--mustard-l)">現況：共用一份庫存<small>2 分・B</small></div>
-      <div style="flex:3;background:var(--lav-l)">診斷：瓶頸在宅配<small>3 分・C＋D</small></div>
+      <div style="flex:1;background:var(--rose-l)">公司與問題<small>1 分・A</small></div>
+      <div style="flex:2;background:var(--mustard-l)">假設驗證＋現況<small>2 分・B</small></div>
+      <div style="flex:3.5;background:var(--lav-l)">診斷：瓶頸在宅配<small>3.5 分・C＋D</small></div>
       <div style="flex:2.5;background:var(--sage-l)">三項改善建議<small>2.5 分・B、C、D</small></div>
       <div style="flex:1;background:var(--blue-l)">結論<small>1 分・A</small></div>
     </div>
@@ -597,13 +597,13 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
   <section>
     <div class="head"><h2>期末報告字數分配</h2><p class="meta">目標 <span class="mono">3,900</span> 字，比門檻多留 <span class="mono">900</span> 字緩衝</p></div>
     <div class="panel rep">
-      <div class="rrow"><span>一、緒論・公司・研究方法</span><div class="track"><div class="fill" style="width:77.8%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
-      <div class="rrow"><span>二、供應鏈現況</span><div class="track"><div class="fill" style="width:100%;background:var(--mustard)"></div></div><span class="who" style="background:var(--mustard-l)">B</span></div>
+      <div class="rrow"><span>一、緒論・公司介紹</span><div class="track"><div class="fill" style="width:45.5%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
+      <div class="rrow"><span>二、研究方法＋現況</span><div class="track"><div class="fill" style="width:63.6%;background:var(--mustard)"></div></div><span class="who" style="background:var(--mustard-l)">B</span></div>
       <div class="rrow"><span>三、診斷：配送</span><div class="track"><div class="fill" style="width:100%;background:var(--blue)"></div></div><span class="who" style="background:var(--blue-l)">C</span></div>
-      <div class="rrow"><span>三、診斷：需求與宅配經濟</span><div class="track"><div class="fill" style="width:66.7%;background:var(--lav)"></div></div><span class="who" style="background:var(--lav-l)">D</span></div>
-      <div class="rrow"><span>四、改善建議</span><div class="track"><div class="fill" style="width:66.7%;background:var(--sage)"></div></div><span class="who" style="background:var(--sage-l)">全</span></div>
-      <div class="rrow"><span>五、結論與限制</span><div class="track"><div class="fill" style="width:22.2%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
-      <p class="meta" style="margin-top:6px">長條長度＝字數（700 / 900 / 900 / 600 / 600 / 200）。引用文獻一律改寫，Turnitin 比較安全。</p>
+      <div class="rrow"><span>三、診斷：需求與宅配經濟</span><div class="track"><div class="fill" style="width:63.6%;background:var(--lav)"></div></div><span class="who" style="background:var(--lav-l)">D</span></div>
+      <div class="rrow"><span>四、改善建議</span><div class="track"><div class="fill" style="width:63.6%;background:var(--sage)"></div></div><span class="who" style="background:var(--sage-l)">全</span></div>
+      <div class="rrow"><span>五、結論與限制</span><div class="track"><div class="fill" style="width:18.2%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
+      <p class="meta" style="margin-top:6px">長條長度＝字數（500 / 700 / 1,100 / 700 / 700 / 200；生產庫存只占現況裡的一段）。引用文獻一律改寫，Turnitin 比較安全。</p>
     </div>
   </section>
 
