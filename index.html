@@ -241,6 +241,17 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 .tp.done .dot{border-color:var(--sage-d);background:var(--sage-d)}
 .oldnew{font-size:12.5px;color:var(--muted)}
 .oldnew s{color:var(--muted)}
+.pps{display:flex;flex-direction:column;gap:12px}
+.pp{display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.3fr) minmax(0,1.5fr);gap:14px;align-items:start;font-size:13.5px}
+.pp+.pp{border-top:1px dashed var(--line);padding-top:12px}
+.pp.hd3{font-size:12px;color:var(--muted);font-weight:700}
+.pp.hd3+.pp{border-top:none;padding-top:0}
+.pp .who{font-family:var(--mono);font-weight:700;text-align:center;border-radius:8px;padding:4px 0}
+.pp small{display:block;color:var(--muted);font-size:12.5px;line-height:1.5}
+.pp .num{font-family:var(--mono);font-weight:500;font-size:15px}
+.pp .track{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:4px 0}
+.pp .fill{height:100%;border-radius:4px}
+@media(max-width:640px){.pp{grid-template-columns:36px minmax(0,1fr)}.pp>div:nth-child(n+3){grid-column:2}.pp.hd3{display:none}}
 .swipe{display:none}@media(max-width:740px){.swipe{display:block}}
 .lt{display:flex;flex-direction:column;gap:2px;font-size:12.5px}
 .lt div{height:12px;border-radius:4px;background:var(--bg)}
@@ -579,30 +590,39 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
     </div>
   </section>
 
-  <!-- PRESENTATION -->
+  <!-- PER-PERSON ALLOCATION -->
   <section>
-    <div class="head"><h2>發表 10 分鐘</h2></div>
-    <div class="bar">
-      <div style="flex:1;background:var(--rose-l)">公司與問題<small>1 分・A</small></div>
-      <div style="flex:2;background:var(--mustard-l)">假設驗證＋現況<small>2 分・B</small></div>
-      <div style="flex:3.5;background:var(--lav-l)">診斷：瓶頸在宅配<small>3.5 分・C＋D</small></div>
-      <div style="flex:2.5;background:var(--sage-l)">三項改善建議<small>2.5 分・B、C、D</small></div>
-      <div style="flex:1;background:var(--blue-l)">結論<small>1 分・A</small></div>
+    <div class="head"><h2>每個人要準備多少</h2><p class="meta">上台共 <span class="mono">10</span> 分鐘、報告共 <span class="mono">3,900</span> 字（比門檻多留 <span class="mono">900</span> 字緩衝）</p></div>
+    <div class="panel pps">
+      <div class="pp hd3"><span></span><span>負責</span><span>上台時間</span><span>報告字數</span></div>
+      <div class="pp">
+        <span class="who" style="background:var(--rose-l);color:var(--rose-d)">A</span>
+        <div><b>統籌・整理簡報</b><small>另負責數據假設表、整理簡報</small></div>
+        <div><span class="num">2 分</span><small>開場：公司與問題（1 分）、結論（1 分）</small></div>
+        <div><span class="num">800 字</span><div class="track"><div class="fill" style="width:69.6%;background:var(--rose)"></div></div><small>緒論・公司介紹 500、結論與研究限制 300</small></div>
+      </div>
+      <div class="pp">
+        <span class="who" style="background:var(--mustard-l);color:var(--mustard-d)">B</span>
+        <div><b>研究方法・現況</b></div>
+        <div><span class="num">2.5 分</span><small>假設驗證＋現況（1.5 分）、建議：年節預購（1 分）</small></div>
+        <div><span class="num">950 字</span><div class="track"><div class="fill" style="width:82.6%;background:var(--mustard)"></div></div><small>研究方法＋現況 700、改善建議 250</small></div>
+      </div>
+      <div class="pp">
+        <span class="who" style="background:var(--blue-l);color:var(--blue-d)">C</span>
+        <div><b>配送（核心）</b></div>
+        <div><span class="num">3 分</span><small>診斷：配送（2 分）、建議：分區配送（1 分）</small></div>
+        <div><span class="num">1,150 字</span><div class="track"><div class="fill" style="width:100.0%;background:var(--blue)"></div></div><small>配送診斷 900、改善建議 250</small></div>
+      </div>
+      <div class="pp">
+        <span class="who" style="background:var(--lav-l);color:var(--lav-d)">D</span>
+        <div><b>需求與宅配經濟</b></div>
+        <div><span class="num">2.5 分</span><small>診斷：需求與宅配經濟（1.5 分）、建議：單位經濟（1 分）</small></div>
+        <div><span class="num">1,000 字</span><div class="track"><div class="fill" style="width:87.0%;background:var(--lav)"></div></div><small>需求與宅配經濟 750、改善建議 250</small></div>
+      </div>
     </div>
-  </section>
-
-  <!-- REPORT -->
-  <section>
-    <div class="head"><h2>期末報告字數分配</h2><p class="meta">目標 <span class="mono">3,900</span> 字，比門檻多留 <span class="mono">900</span> 字緩衝</p></div>
-    <div class="panel rep">
-      <div class="rrow"><span>一、緒論・公司介紹</span><div class="track"><div class="fill" style="width:45.5%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
-      <div class="rrow"><span>二、研究方法＋現況</span><div class="track"><div class="fill" style="width:63.6%;background:var(--mustard)"></div></div><span class="who" style="background:var(--mustard-l)">B</span></div>
-      <div class="rrow"><span>三、診斷：配送</span><div class="track"><div class="fill" style="width:100%;background:var(--blue)"></div></div><span class="who" style="background:var(--blue-l)">C</span></div>
-      <div class="rrow"><span>三、診斷：需求與宅配經濟</span><div class="track"><div class="fill" style="width:63.6%;background:var(--lav)"></div></div><span class="who" style="background:var(--lav-l)">D</span></div>
-      <div class="rrow"><span>四、改善建議</span><div class="track"><div class="fill" style="width:63.6%;background:var(--sage)"></div></div><span class="who" style="background:var(--sage-l)">全</span></div>
-      <div class="rrow"><span>五、結論與限制</span><div class="track"><div class="fill" style="width:18.2%;background:var(--rose)"></div></div><span class="who" style="background:var(--rose-l)">A</span></div>
-      <p class="meta" style="margin-top:6px">長條長度＝字數（500 / 700 / 1,100 / 700 / 700 / 200；生產庫存只占現況裡的一段）。引用文獻一律改寫，Turnitin 比較安全。</p>
-    </div>
+    <p class="meta">上台順序（依時間比例）</p>
+    <div class="bar"><div style="flex:1;background:var(--rose-l)">開場<small>1 分・A</small></div><div style="flex:1.5;background:var(--mustard-l)">假設驗證＋現況<small>1.5 分・B</small></div><div style="flex:2;background:var(--blue-l)">診斷：配送<small>2 分・C</small></div><div style="flex:1.5;background:var(--lav-l)">診斷：需求<small>1.5 分・D</small></div><div style="flex:1;background:var(--mustard-l)">建議：年節預購<small>1 分・B</small></div><div style="flex:1;background:var(--blue-l)">建議：分區配送<small>1 分・C</small></div><div style="flex:1;background:var(--lav-l)">建議：單位經濟<small>1 分・D</small></div><div style="flex:1;background:var(--rose-l)">結論<small>1 分・A</small></div></div>
+    <p class="meta">報告引用文獻一律改寫，Turnitin 比較安全。改善建議三人各寫約 250 字，A 整理簡報時順便統一格式。</p>
   </section>
 
   <!-- TIMELINE -->
