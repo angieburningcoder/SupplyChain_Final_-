@@ -241,6 +241,13 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 .tp.done .dot{border-color:var(--sage-d);background:var(--sage-d)}
 .oldnew{font-size:12.5px;color:var(--muted)}
 .oldnew s{color:var(--muted)}
+.swipe{display:none}@media(max-width:740px){.swipe{display:inline}}
+.lt{display:flex;flex-direction:column;gap:2px;font-size:12.5px}
+.lt div{height:12px;border-radius:4px;background:var(--bg)}
+.lt div span{display:block;height:100%;border-radius:4px}
+.lt em{font-style:normal;color:var(--ink)}
+.rrow{grid-template-columns:200px minmax(0,1fr) 40px}
+@media(max-width:520px){.rrow{grid-template-columns:120px minmax(0,1fr) 34px}}
 </style>
 </head>
 <body>
@@ -333,7 +340,7 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- SUPPLY CHAIN SCENE -->
   <section>
-    <div class="head"><h2>供應鏈地圖（訪談驗證版）</h2><p class="meta">綠色＝訪談確認沒問題，黃色＝次要問題，紅色＝真正瓶頸</p></div>
+    <div class="head"><h2>供應鏈地圖（訪談驗證版）</h2><p class="meta">綠色＝訪談確認沒問題，黃色＝次要問題，紅色＝真正瓶頸<span class="swipe">　·　手機請左右滑動看完整地圖</span></p></div>
     <div class="panel scroll">
       <svg viewBox="0 0 1000 400" style="min-width:720px;width:100%;display:block" role="img" aria-label="艷麗供應鏈火柴人示意圖（訪談驗證版）">
         <rect x="10" y="20" width="200" height="370" rx="14" fill="var(--blue-l)"/>
@@ -473,7 +480,8 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
         <svg viewBox="0 0 160 60"><path d="M4 56 H156" stroke="var(--line)"/><path d="M4 50 L40 50 L56 49 L66 30 L74 26 L80 50 L110 50 L120 36 L128 34 L132 50 L156 50" class="st" stroke="var(--blue-d)" stroke-width="2"/><path d="M4 50 L40 50 L56 49 L66 30 L74 26 L80 50 L110 50 L120 36 L128 34 L132 50 L156 50 V56 H4Z" fill="var(--blue-l)" opacity=".8"/><text x="70" y="20" text-anchor="middle" font-size="8" fill="var(--blue-d)">過年</text><text x="124" y="28" text-anchor="middle" font-size="8" fill="var(--blue-d)">中秋</text></svg>
         <span>占比最低但想拉高；節前 1～2 週約 2 倍</span></div>
       <div class="dm"><b>訂單交期</b>
-        <svg viewBox="0 0 160 60"><rect x="4" y="10" width="45" height="16" rx="4" fill="var(--blue-l)"/><text x="54" y="22" font-size="10" fill="var(--ink)">散客 2～3 天</text><rect x="4" y="34" width="105" height="16" rx="4" fill="var(--lav-l)"/><text x="114" y="46" font-size="10" fill="var(--ink)">企業 ≈1 週</text></svg>
+        <div class="lt"><div><span style="width:30%;background:var(--blue-l)"></span></div><em>散客 2～3 天</em></div>
+        <div class="lt"><div><span style="width:70%;background:var(--lav-l)"></span></div><em>企業約 1 週</em></div>
         <span>非年節宅配約 40 筆（統計期間待確認）</span></div>
     </div>
   </section>
@@ -601,13 +609,13 @@ footer{margin-top:44px;font-size:12.5px;color:var(--muted)}
 
   <!-- TIMELINE -->
   <section>
-    <div class="head"><h2>時程</h2><p class="meta">實心紅＝上台或繳交（課程規定），實心綠＝已完成，空心＝組內節點</p></div>
+    <div class="head"><h2>時程</h2><p class="meta">綠＝已完成，紅＝接下來要上台或繳交，空心＝組內節點</p></div>
     <div class="panel">
       <div class="tl t8">
         <div class="tp done"><span class="dot"></span><div><div class="d">10/27</div><div class="t">定題・分工<br>聯絡店家</div></div></div>
-        <div class="tp due"><span class="dot"></span><div><div class="d">11/3</div><div class="t">上台<br>Final Intro</div></div></div>
-        <div class="tp done"><span class="dot"></span><div><div class="d">✓</div><div class="t">訪談店家</div></div></div>
-        <div class="tp"><span class="dot"></span><div><div class="d">待定</div><div class="t">補問數據<br>改分工</div></div></div>
+        <div class="tp done"><span class="dot"></span><div><div class="d">11/3</div><div class="t">上台<br>Final Intro</div></div></div>
+        <div class="tp done"><span class="dot"></span><div><div class="d">11/12</div><div class="t">訪談店家 ✓</div></div></div>
+        <div class="tp due"><span class="dot"></span><div><div class="d">11/17</div><div class="t">報告分工</div></div></div>
         <div class="tp"><span class="dot"></span><div><div class="d">12/4</div><div class="t">完成簡報</div></div></div>
         <div class="tp due"><span class="dot"></span><div><div class="d">12/15</div><div class="t">上台發表<br>10 分鐘</div></div></div>
         <div class="tp"><span class="dot"></span><div><div class="d">12/20</div><div class="t">完成報告</div></div></div>
